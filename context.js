@@ -19,10 +19,25 @@
 
 //Code Here
 
+
+function User(userName, email){
+  this.userName = userName
+  this.email = email
+
+  // this.getUserName = function (){
+  //   return this.userName
+  // }
+
+}
+
+ let getUserName = function(){
+  return this.userName
+}
 ////////// PROBLEM 2 //////////
 
 /*
- Below we have the constructor Animal.  The eat method is using the "this" keyword.  Use the "new" keyword to assign context to "this", and save the instance to a variable named animal1.  You can pass anything you want in for name, species and food.
+ Below we have the constructor Animal.  The eat method is using the "this" keyword.  Use the "new" keyword to assign context to "this", 
+ and save the instance to a variable named animal1.  You can pass anything you want in for name, species and food.
 */
 
 function Animal(name, species, food) {
@@ -38,11 +53,12 @@ function Animal(name, species, food) {
 }
 
 //Code Here
-
+const animal1 = new Animal('wolf', 'canis', 'meat' )
 ////////// PROBLEM 3 //////////
 
 /*
-  Use the bind method to assign context of the "this" keyword in the sayHi function to the user object; and save the bound function to a variable named whoSaysHi.  
+  Use the bind method to assign context of the "this" keyword in the sayHi function to the user object; 
+  and save the bound function to a variable named whoSaysHi.  
 */
 
 function sayHi(greeting) {
@@ -56,7 +72,7 @@ let who = {
 }
 
 //Code Here
-
+let whoSaysHi = sayHi.bind(who)
 ////////// PROBLEM 4 //////////
 
 /*
@@ -69,6 +85,8 @@ function whatIsThis() {
 
 // uncomment the line below and tell us what the context of "this" is for whatIsThis()
 //let context1 = ???
+let context1 = whatIsThis()
+
 
 let product = {
   name: 'snake plant',
@@ -81,6 +99,7 @@ let func = whatIsThis.bind(product)
 
 // uncomment the line below and tell us what the context of "this" is when we invoke func
 //let context2 = ???
+let context2 = product
 
 let vacation = {
   location: 'Hawaii',
@@ -92,6 +111,8 @@ let vacation = {
 
 // uncomment the line below and tell us what the context of "this" is when we invoke vacation.whatIsThis
 //let context3 = ???
+let context3 = vacation
+
 
 function Family(numParents, numKids, numPets) {
   this.numParents = numParents
@@ -107,3 +128,6 @@ let family1 = new Family(2, 4, 1)
 
 // uncomment the line below and tell us what the context of "this" is for the instance of Family created above.
 // let context4 = ???
+let context4 = family1
+
+
